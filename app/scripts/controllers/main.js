@@ -1,26 +1,18 @@
 'use strict';
-
-/**
- * @ngdoc function
- * @name singlePageApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the singlePageApp
- */
-
 var app = angular.module('singlePageApp')
 
+app.controller('MainCtrl', ['$scope', '$http', function($scope, $http) {
+$scope.headers =["","Type","Name", "Title","Phone","Ext","Email"]
+  $http({
+    method : "GET",
+    url : "http://localhost:3000/contacts"
+  }).then(function mySuccess(response) {
+    $scope.contacts= response.data;
 
-  app.controller('MainCtrl', ['$scope', function($scope) {
-    $scope.username = 'World';
+  }, function myError(response) {
+    // error handling goes here
+    console.log(response)
+    $scope.data = response.data || 'Request failed';
+  });
 
-    $scope.sayHello = function() {
-      $scope.greeting = 'Hello ' + $scope.username + '!';
-    };
-
-    $scope.items = [
-      ['A', 'B', 'C'],
-      ['item1', 'item2', 'item3'],
-      ['item4', 'item5', 'item6']
-    ];
-  }]);
+}]);

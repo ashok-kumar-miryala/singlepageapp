@@ -16,6 +16,47 @@
     <!-- endbuild -->
   </head>
   <body ng-app="singlePageApp">
+  <style type="text/css">
+    #title{
+      color:#6da8c4;
+      border-top:0;
+    }
+
+ #sub-title{
+      color:#6da8c4;
+      border-top:0;
+    }
+
+
+    .table{
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:12px;
+      border:solid #dbdbdb 1px;
+      border-radius:6px;
+      -moz-border-radius:6px;
+
+    }
+
+    .table th{
+      color:#6da8c4;
+      border-top:0;
+
+    }
+    .table td, .table th{
+      padding:10px;
+      border-left:solid #B3C7D4 1px;
+      border-top:solid #B3C7D4 1px;
+
+    }
+
+    .table tr:nth-child(even) {
+      background-color: #efefef;
+    }
+
+    .table tr td:first-child, .table tr th:first-child{
+      border-left:0;
+    }
+  </style>
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -90,7 +131,7 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/controllers/data.js"></script>
+        <!--<script src="scripts/controllers/data.js"></script>-->
         <!-- endbuild -->
 </body>
 </html>
